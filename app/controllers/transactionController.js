@@ -62,7 +62,7 @@ const getTransactionByWallet = async (req, res) => {
       createdBy: loggedInUserId,
     }
 
-    if (walletId) {
+    if (walletId !== undefined) {
       filter.walletId = walletId
     }
 
