@@ -88,7 +88,7 @@ const getTransactionByWallet = async (req, res) => {
     let totalExpense = 0
 
     transactions.forEach((transaction) => {
-      if (transaction.walletId.excludeFromTotal) return
+      if (transaction.walletId && transaction.walletId.excludeFromTotal) return
       if (transaction.type === 'income') {
         totalIncome += transaction.amount
       } else if (transaction.type === 'expense') {
