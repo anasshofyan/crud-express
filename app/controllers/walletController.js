@@ -78,10 +78,10 @@ const getDetailWallet = async (req, res) => {
 
     const wallet = await Wallet.findOne({ _id: id, createBy: loggedInUserId })
 
-    if (!wallet) {
-      sendResponse(res, false, 'Wallet tidak ditemukan', 404)
-      return
-    }
+    // if (!wallet) {
+    //   sendResponse(res, false, 'Wallet tidak ditemukan', 404)
+    //   return
+    // }
 
     sendResponse(res, true, 'Get detail wallet success', 200, wallet)
   } catch (error) {
